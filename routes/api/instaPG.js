@@ -19,6 +19,7 @@ const { HEADER } = require("../../common/constant/api-constants");
 // @access Public
 router.post("/webhook", async (req, res) => {
   try {
+    console.log("Req Webhook:: " + JSON.stringify(req.body));
     const { udf1, status } = req.body;
     if (status !== "failure") {
       //bot logic

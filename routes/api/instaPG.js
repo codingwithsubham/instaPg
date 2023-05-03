@@ -27,7 +27,7 @@ router.post("/webhook", async (req, res) => {
         //requesting to gold Wallet
         const postData = req.body;
         await axios.post(
-          "https://gold-wallet.onrender.com/api/pg/order-success",
+          "https://digitalgold.onrender.com/api/pg/order-success",
           postData,
           HEADER
         );

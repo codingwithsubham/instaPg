@@ -11,6 +11,7 @@ const {
   GOLD_WALLET,
   INSTA_MEDIA,
   FAST_DIAL,
+  WINZA,
 } = require("../../common/constant/constants");
 const { HEADER } = require("../../common/constant/api-constants");
 
@@ -46,6 +47,15 @@ router.post("/webhook", async (req, res) => {
         const postData = req.body;
         await axios.post(
           "https://fast-dial.onrender.com/api/pg/order-success",
+          postData,
+          HEADER
+        );
+        return res.status(STATUS_CODE_200).send(SUCCESS);
+      } else if(udf1 === WINZA){
+        //requesting to instaMedia
+        const postData = req.body;
+        await axios.post(
+          "https://winza.onrender.com/api/pg/order-success",
           postData,
           HEADER
         );

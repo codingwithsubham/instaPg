@@ -50,4 +50,5 @@ module.exports = {
   GOLD_WALLET: "GOLD_WALLET",
   INSTA_MEDIA: "INSTA_MEDIA",
   FAST_DIAL: "FAST_DIAL",
+  WINZA: "WINZA",
 };

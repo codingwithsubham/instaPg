@@ -43,7 +43,7 @@ router.post("/webhook", async (req, res) => {
         );
         return res.status(STATUS_CODE_200).send(SUCCESS);
       } else if(udf1 === FAST_DIAL){
-        //requesting to instaMedia
+        //requesting to fastdial
         const postData = req.body;
         await axios.post(
           "https://fast-dial.onrender.com/api/pg/order-success",
@@ -52,10 +52,19 @@ router.post("/webhook", async (req, res) => {
         );
         return res.status(STATUS_CODE_200).send(SUCCESS);
       } else if(udf1 === WINZA){
-        //requesting to instaMedia
+        //requesting to WINZA
         const postData = req.body;
         await axios.post(
           "https://winza.onrender.com/api/pg/order-success",
+          postData,
+          HEADER
+        );
+        return res.status(STATUS_CODE_200).send(SUCCESS);
+      } else if(udf1 === DAILY_LOTTERY){
+        //requesting to daily lottery
+        const postData = req.body;
+        await axios.post(
+          "https://dailylottery-mzsr.onrender.com/api/pg/order-success",
           postData,
           HEADER
         );

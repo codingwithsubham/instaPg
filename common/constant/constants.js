@@ -51,4 +51,5 @@ module.exports = {
   INSTA_MEDIA: "INSTA_MEDIA",
   FAST_DIAL: "FAST_DIAL",
   WINZA: "WINZA",
+  DAILY_LOTTERY: "DAILY_LOTTERY",
 };

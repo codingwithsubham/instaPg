@@ -12,6 +12,7 @@ const {
   INSTA_MEDIA,
   FAST_DIAL,
   WINZA,
+  DAILY_LOTTERY,
 } = require("../../common/constant/constants");
 const { HEADER } = require("../../common/constant/api-constants");
 

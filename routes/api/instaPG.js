@@ -8,11 +8,8 @@ const {
   STATUS_CODE_200,
   SUCCESS,
   STATUS_CODE_400,
-  GOLD_WALLET,
-  INSTA_MEDIA,
-  FAST_DIAL,
-  WINZA,
-  DAILY_LOTTERY,
+  EA,
+  CNF,
 } = require("../../common/constant/constants");
 const { HEADER } = require("../../common/constant/api-constants");
 
@@ -25,52 +22,23 @@ router.post("/webhook", async (req, res) => {
     const { udf1, status } = req.body;
     if (status !== "failure") {
       //bot logic
-      if(udf1 === GOLD_WALLET){
-        //requesting to gold Wallet
+      if (udf1 === EA) {
         const postData = req.body;
         await axios.post(
-          "https://digitalgold.onrender.com/api/pg/order-success",
+          "https://easyachieve.co.in/api/pg/order-success",
           postData,
           HEADER
         );
         return res.status(STATUS_CODE_200).send(SUCCESS);
-      } else if(udf1 === INSTA_MEDIA){
-        //requesting to instaMedia
+      } else if (udf1 === CNF) {
         const postData = req.body;
         await axios.post(
-          "https://instamedia.onrender.com/api/pg/order-success",
+          "https://cnf.onrender.com/api/pg/order-success",
           postData,
           HEADER
         );
         return res.status(STATUS_CODE_200).send(SUCCESS);
-      } else if(udf1 === FAST_DIAL){
-        //requesting to fastdial
-        const postData = req.body;
-        await axios.post(
-          "https://fast-dial.onrender.com/api/pg/order-success",
-          postData,
-          HEADER
-        );
-        return res.status(STATUS_CODE_200).send(SUCCESS);
-      } else if(udf1 === WINZA){
-        //requesting to WINZA
-        const postData = req.body;
-        await axios.post(
-          "https://winza.onrender.com/api/pg/order-success",
-          postData,
-          HEADER
-        );
-        return res.status(STATUS_CODE_200).send(SUCCESS);
-      } else if(udf1 === DAILY_LOTTERY){
-        //requesting to daily lottery
-        const postData = req.body;
-        await axios.post(
-          "https://dailylottery-mzsr.onrender.com/api/pg/order-success",
-          postData,
-          HEADER
-        );
-        return res.status(STATUS_CODE_200).send(SUCCESS);
-      } 
+      }
     } else {
       return res
         .status(STATUS_CODE_400)

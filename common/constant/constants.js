@@ -47,9 +47,6 @@ module.exports = {
   TRANSFERED: "Transfered",
 
   //SERVICE NAMES
-  GOLD_WALLET: "GOLD_WALLET",
-  INSTA_MEDIA: "INSTA_MEDIA",
-  FAST_DIAL: "FAST_DIAL",
-  WINZA: "WINZA",
-  DAILY_LOTTERY: "DAILY_LOTTERY",
+  EA: "EA",
+  CNF: "CNF"
 };
